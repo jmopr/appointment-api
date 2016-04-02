@@ -1,28 +1,17 @@
 == README
+RESTful Appointment API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Instructions:
+The attached, comma-delimited file contains some appointment
+data. Please use the data to create a database-driven RESTful web API
+using Ruby. Sinatra or Rails app is preferred. The API should expose the
+following 4 methods to facilitate CRUD operations on the appointment
+resources.
+- Create
+- Update
+- Delete
+- List (should accept optional start/end time parameters to filter data)
+When creating or updating a resource, it should only be considered valid if
+the start and end times are in the future and do not overlap an existing
+appointment on the same day. All operations should return valid JSON
+along with the appropriate HTTP status codes.
