@@ -1,5 +1,5 @@
 class Appointment < ActiveRecord::Base
-  validates :appt_day, presence: true
+  # validates :appt_day, presence: true
   # validates :start_time, presence: true
   # validates :end_time, presence: true
   # validates :first_name, presence: true

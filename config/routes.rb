@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   # resources :appointments, except: :destroy
-  constraints subdomain: 'api' do     #except: :destroy
-    namespace 'api', path: '/' do
+  # constraints subdomain: 'api' do     #except: :destroy
+    # namespace 'api', path: '/' do
       resources :appointments
-    end
-  end
+    # end
+  # end
   # get 'appointments/index'
-  root 'api/appointments#index'
+  # root 'api/appointments#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
