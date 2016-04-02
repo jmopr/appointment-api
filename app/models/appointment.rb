@@ -11,6 +11,7 @@ class Appointment < ActiveRecord::Base
     end
   end
   # Validate if there is not an appointment already in that slot.
-
-
+  def appointment_date_cannot_conflict
+    
+  end
 end
