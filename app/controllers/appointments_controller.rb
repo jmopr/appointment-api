@@ -1,6 +1,8 @@
 class AppointmentsController < ApplicationController
   def show
     render json: Appointment.find(params[:id]), status: :ok
+    rescue
+      render json: {appointment: {errors: "appointment not found"}}, status: :not_found
   end
 
   def index
@@ -8,12 +10,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    appointment = Appointment.new #(appointment_params)
-    appointment.appt_day = params[:appt_day]
-    appointment.start_time = params[:start_time]
-    appointment.end_time = params[:end_time]
-    appointment.last_name = params[:last_name]
-    appointment.first_name = params[:first_name]
+    appointment = Appointment.new(appointment_params)
 
     if appointment.save
       render json: appointment, status: :created, location: appointment
@@ -29,16 +26,21 @@ class AppointmentsController < ApplicationController
     else
       render json: appointment.errors, status: :unprocessable_entity
     end
+    rescue
+      render json: {appointment: {errors: "appointment not found"}}, status: :not_found
   end
 
   def destroy
     Appointment.destroy(params[:id])
     render json: Appointment.all
+    rescue
+      render json: {appointment: {errors: "appointment not found"}}, status: :not_found
   end
 
   private
     def appointment_params
       # params.require(:appointment).permit(:appt_day, :start_time, :end_time, :first_name, :last_name, :comments)
       params.permit(:appt_day, :start_time, :end_time, :first_name, :last_name, :comments)
+      # params.require(:appt_day).permit(:start_time, :end_time, :first_name, :last_name, :comments)
     end
 end
