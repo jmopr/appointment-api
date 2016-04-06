@@ -40,7 +40,6 @@ class AppointmentsController < ApplicationController
   private
     def appointment_params
       # params.require(:appointment).permit(:appt_day, :start_time, :end_time, :first_name, :last_name, :comments)
-      params.permit(:appt_day, :start_time, :end_time, :first_name, :last_name, :comments)
-      # params.require(:appt_day).permit(:start_time, :end_time, :first_name, :last_name, :comments)
+      params.permit(:appt_day, :appt_end, :start_time, :first_name, :last_name, :comments)
     end
 end
