@@ -11,17 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331011957) do
+ActiveRecord::Schema.define(version: 20160406183206) do
 
   create_table "appointments", force: :cascade do |t|
-    t.string   "start_time"
-    t.string   "end_time"
+    t.datetime "appt_end"
     t.string   "first_name"
     t.string   "last_name"
     t.text     "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date     "appt_day"
+    t.datetime "appt_day"
   end
 
 end

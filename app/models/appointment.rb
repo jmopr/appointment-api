@@ -1,5 +1,5 @@
 class Appointment < ActiveRecord::Base
-  validates :appt_day, :start_time, :end_time, :first_name, :last_name, presence: true
+  validates :appt_day, :appt_end, :first_name, :last_name, presence: true
   validates :first_name, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters for first name" }, length: { in: 2..20 }
   validates :last_name, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters for last name" }, length: { in: 2..30 }
   # validate :appointment_date_cannot_be_in_the_past, on: :create
@@ -15,11 +15,9 @@ class Appointment < ActiveRecord::Base
 
   end
 
-  
+
 end
 
-
-# class Appointment < ActiveRecord::Base
 #   validate :time_intersects?,:start_time_cannot_be_in_the_past, :start_time_always_before_end_time, on: :create
 #   validate :appointment_kept_same_time, :start_time_cannot_be_in_the_past, :start_time_always_before_end_time, on: :update
 

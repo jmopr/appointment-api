@@ -30,8 +30,8 @@ class AppointmentsControllerTest < ActionController::TestCase
   end
 
   test "should update appointment" do
-    patch :update, id: @appointment.id, appointment: {}
-    # assert_redirected_to appointment_path(assigns(:appointment))
+    patch :update, id: @appointment.id, {} #appt_day: '17/11/05', start_time: "7:05", end_time: "7:10", first_name: "Juan", last_name: "Ortiz"}
+    # assert_response :updated
   end
 
   test "should destroy appointment" do
@@ -40,6 +40,7 @@ class AppointmentsControllerTest < ActionController::TestCase
     end
     # assert_redirected_to appointments_path
   end
+
   private
 
     def initialize_appointment
