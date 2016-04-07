@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
   end
 
   def index
-    render json: Appointment.all, status: :ok
+    render json: Appointment.list(appointment_params), status: :ok
   end
 
   def create
