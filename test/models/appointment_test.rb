@@ -41,6 +41,4 @@ class AppointmentTest < ActiveSupport::TestCase
     appointment = Appointment.new(appt_day: "2013-11-01 07:05:00")
     assert_not appointment.save, "Saved the appointment in conflict with another."
   end
-
-
 end
