@@ -25,7 +25,7 @@ csv.each do |row|
     last_name = row["last_name"].capitalize
     comments = row["comments"]
 
-    Appointment.create(appt_day: appt_day, appt_end: appt_end, first_name: first_name, last_name: last_name,
-    comments: comments)
+    Appointment.create(appt_day: appt_day, appt_end: appt_end, first_name: first_name,
+    last_name: last_name, comments: comments)
   end
 end

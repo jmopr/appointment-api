@@ -1,9 +1,4 @@
 class AppointmentsController < ApplicationController
-
-  def new
-    appointment = Appointment.new
-  end
-
   def show
     render json: Appointment.find(params[:id]), status: :ok
     rescue
@@ -13,7 +8,7 @@ class AppointmentsController < ApplicationController
   def index
     render json: Appointment.find_appointments(appointment_params), status: :ok
     rescue
-      render json: {appointments: {errors: "no appointment found"}}, status: :not_found
+      render json: {appointments: {errors: "no appointments found"}}, status: :not_found
   end
 
   def create
