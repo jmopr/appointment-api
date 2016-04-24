@@ -14,12 +14,12 @@ class AppointmentsControllerTest < ActionController::TestCase
     assert_response :ok
   end
 
-  # test "should get index" do
-  #   get :index, appointments: {first_name: 'MyString'}
-  #   assert_response :ok
-  #   assert_not_nil assigns(:appointments)
-  # end
-  #
+  test "should get index" do
+    get :index, appointments: {first_name: 'MyString'}
+    assert_response :ok
+    assert_not_nil assigns(:appointments)
+  end
+  
   # test "should create appointment" do
   #   assert_difference('Appointment.count') do
   #     post :create, appointment: {appt_day: '17/11/05 7:05', appt_end: "17/11/05 7:10", first_name: "Jose", last_name: "Valentin"}
