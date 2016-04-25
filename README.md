@@ -1,4 +1,5 @@
 RESTful Appointment API
+
 Application developed with Ruby on Rails that exposes appointment resources with 4 methods that handle CRUD operations. 
 
 The database is first filled with data from a csv file. The API exposes the following four methods for operations on the appointment resources:
