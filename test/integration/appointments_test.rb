@@ -14,10 +14,4 @@ class ListingAppointmentsTest < ActionDispatch::IntegrationTest
     assert response.ok?
     assert_equal Mime::JSON, response.content_type
   end
-
-  # test 'returns an appointment in JSON' do
-  #   get '/appointments/', {id: 1}, { 'Accept' => Mime::JSON }
-  #   assert response.ok?
-  #   assert_equal Mime::JSON, response.content_type
-  # end
 end
