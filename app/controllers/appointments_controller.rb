@@ -6,7 +6,9 @@ class AppointmentsController < ApplicationController
   end
 
   def index
-    render json: Appointment.find_appointments(appointment_params), status: :ok
+    (params.keys.include? "appointment") ? appointment = Appointment.find_appointments(appointment_params) :
+                                           appointment = Appointment.all
+    render json: appointment, status: :ok
     rescue
       render json: {appointments: {errors: "no appointments found"}}, status: :not_found
   end
