@@ -2,7 +2,7 @@ class Appointment < ActiveRecord::Base
   validates :appt_day, :appt_end, :first_name, :last_name, presence: true
   validates :first_name, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters for first name" }, length: { in: 2..20 }
   validates :last_name, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters for last name" }, length: { in: 2..30 }
-  # validate :appointment_date_cannot_be_in_the_past, :appointment_date_conflict, on: :create
+  validate :appointment_date_cannot_be_in_the_past, :appointment_date_conflict, on: :create
 
   # Retrieve list of appointments by parameters
   def self.find_appointments params
