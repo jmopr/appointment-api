@@ -14,8 +14,8 @@ class AppointmentsControllerTest < ActionController::TestCase
     assert_response :ok
   end
 
-  def test_create
-    assert_difference('Appointment.count') do
+  test "should create appointment" do
+    assert_difference('Appointment.count', +1) do
       post :create, appointment: { id: 1000, appt_day: '2016-11-21T15:15:00.000Z', appt_end: "2016-11-21T15:20:00.000Z", first_name: "Jose", last_name: "Valentin" }
     end
     assert_response :created
